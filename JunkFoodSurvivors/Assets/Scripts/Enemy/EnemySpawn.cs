@@ -18,10 +18,10 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnEnemy();
+   
     }
 
-    void SpawnEnemy()
+   public void SpawnEnemy()
     {
         Vector2 direction = Random.insideUnitCircle.normalized;
         float distance = Random.Range(minRadius, maxRadius);
