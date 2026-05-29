@@ -31,7 +31,7 @@ public class PlayerMovementArduino : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(_portName + " niet gevonden in Windows. Arduino-besturing overgeslagen.");
+            Debug.LogWarning(_portName + " Not found. Arduino-control skipped.");
             DisconnectArduino();
         }
     }
@@ -69,8 +69,8 @@ public class PlayerMovementArduino : MonoBehaviour
     {
         switch (cmd)
         {
-            case 'A'://pin 2 -> right
-                moveDirection = Vector2.right;
+            case 'A'://pin 2 -> left
+                moveDirection = Vector2.left;
                 break;
             case 'W': //pin 3 -> up
                 moveDirection = Vector2.up;
@@ -78,8 +78,8 @@ public class PlayerMovementArduino : MonoBehaviour
             case 'S': // Pin 4 -> down
                 moveDirection = Vector2.down;
                 break;
-            case 'D': // Pin 5 -> left
-                moveDirection = Vector2.left;
+            case 'D': // Pin 5 -> right
+                moveDirection = Vector2.right;
                 break;
             case 'X': // no button pressed stop moving
                 moveDirection = Vector2.zero;
