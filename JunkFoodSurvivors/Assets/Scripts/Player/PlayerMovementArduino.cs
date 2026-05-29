@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.IO.Ports;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMovementArduino : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class PlayerMovementArduino : MonoBehaviour
     private SerialPort stream;
 
     public float moveSpeed = 5f;
-    private Vector2 _moveDirection = Vector2.zero;
+    [HideInInspector] public Vector2 moveDirection = Vector2.zero;
+    [HideInInspector] public Vector2 lastMoveDirection = Vector2.right;
     private bool _isArduinoConnected = false;
 
     void Start()
@@ -62,7 +64,7 @@ public class PlayerMovementArduino : MonoBehaviour
             Debug.LogWarning("Arduino disconnected: " + e.Message);
             DisconnectArduino();
         }
-        transform.Translate(_moveDirection * moveSpeed * Time.deltaTime);
+        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
     }
 
     void ProcessInput(char cmd)
@@ -70,19 +72,23 @@ public class PlayerMovementArduino : MonoBehaviour
         switch (cmd)
         {
             case 'A'://pin 2 -> left
-                _moveDirection = Vector2.left;
+                moveDirection = Vector2.left;
+                lastMoveDirection = moveDirection;
                 break;
             case 'W': //pin 3 -> up
-                _moveDirection = Vector2.up;
+                moveDirection = Vector2.up;
+                lastMoveDirection = moveDirection;
                 break;
             case 'S': // Pin 4 -> down
-                _moveDirection = Vector2.down;
+                moveDirection = Vector2.down;
+                lastMoveDirection = moveDirection;
                 break;
             case 'D': // Pin 5 -> right
-                _moveDirection = Vector2.right;
+                moveDirection = Vector2.right;
+                lastMoveDirection = moveDirection;
                 break;
             case 'X': // no button pressed stop moving
-                _moveDirection = Vector2.zero;
+                moveDirection = Vector2.zero;
                 break;
 
             // --- ACTIONS (button 5 and 6) ---
@@ -107,7 +113,7 @@ public class PlayerMovementArduino : MonoBehaviour
     private void DisconnectArduino()
     {
         _isArduinoConnected = false;
-        _moveDirection = Vector2.zero; 
+        moveDirection = Vector2.zero; 
 
         try
         {
