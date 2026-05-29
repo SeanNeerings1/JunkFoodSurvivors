@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
-    private Vector2 moveDirection = Vector2.zero;
+    private Vector2 _moveDirection = Vector2.zero;
 
     void Update()
     {
@@ -19,13 +19,13 @@ public class PlayerMovement : MonoBehaviour
             if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) x = -1f;
             if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) x = 1f;
 
-            moveDirection = new Vector2(x, y);
+            _moveDirection = new Vector2(x, y);
 
-            if (moveDirection.magnitude > 1)
+            if (_moveDirection.magnitude > 1)
             {
-                moveDirection.Normalize();
+                _moveDirection.Normalize();
             }
         }
-        transform.Translate(moveDirection * speed * Time.deltaTime);
+        transform.Translate(_moveDirection * speed * Time.deltaTime);
     }
 }
