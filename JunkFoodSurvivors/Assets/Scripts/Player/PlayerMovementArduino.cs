@@ -7,7 +7,7 @@ public class PlayerMovementArduino : MonoBehaviour
     private SerialPort stream;
 
     public float moveSpeed = 5f;
-    private Vector2 moveDirection = Vector2.zero;
+    private Vector2 _moveDirection = Vector2.zero;
     private bool _isArduinoConnected = false;
 
     void Start()
@@ -62,7 +62,7 @@ public class PlayerMovementArduino : MonoBehaviour
             Debug.LogWarning("Arduino disconnected: " + e.Message);
             DisconnectArduino();
         }
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+        transform.Translate(_moveDirection * moveSpeed * Time.deltaTime);
     }
 
     void ProcessInput(char cmd)
@@ -70,19 +70,19 @@ public class PlayerMovementArduino : MonoBehaviour
         switch (cmd)
         {
             case 'A'://pin 2 -> left
-                moveDirection = Vector2.left;
+                _moveDirection = Vector2.left;
                 break;
             case 'W': //pin 3 -> up
-                moveDirection = Vector2.up;
+                _moveDirection = Vector2.up;
                 break;
             case 'S': // Pin 4 -> down
-                moveDirection = Vector2.down;
+                _moveDirection = Vector2.down;
                 break;
             case 'D': // Pin 5 -> right
-                moveDirection = Vector2.right;
+                _moveDirection = Vector2.right;
                 break;
             case 'X': // no button pressed stop moving
-                moveDirection = Vector2.zero;
+                _moveDirection = Vector2.zero;
                 break;
 
             // --- ACTIONS (button 5 and 6) ---
@@ -107,7 +107,7 @@ public class PlayerMovementArduino : MonoBehaviour
     private void DisconnectArduino()
     {
         _isArduinoConnected = false;
-        moveDirection = Vector2.zero; 
+        _moveDirection = Vector2.zero; 
 
         try
         {
