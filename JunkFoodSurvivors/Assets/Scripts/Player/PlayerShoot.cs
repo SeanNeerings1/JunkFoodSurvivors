@@ -27,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    void Shoot()
+    protected virtual void Shoot()
     {
         if (bulletPrefab == null) return;
 
@@ -42,12 +42,16 @@ public class PlayerShoot : MonoBehaviour
         {
             finalShootDirection = _keyboardScript.lastMoveDirection;
         }
+        SpawnSingleBullet(finalShootDirection.normalized);
+    }
+    protected void SpawnSingleBullet(Vector2 direction)
+    {
         Vector3 spawnPosition = firePoint != null ? firePoint.position : transform.position;
         GameObject bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = finalShootDirection * bulletSpeed;
+            rb.linearVelocity = direction * bulletSpeed;
         }
     }
 }
