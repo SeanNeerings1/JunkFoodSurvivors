@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::XpPickup
   xpAmount: 25
+  _pickUpSound: {fileID: 8300000, guid: aaefef8a33d547b43bc435e9c73cd20d, type: 3}
 --- !u!61 &3329289590791784643
 BoxCollider2D:
   m_ObjectHideFlags: 0
