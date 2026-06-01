@@ -10,6 +10,11 @@ public class PlayerXp : MonoBehaviour
     private int previousLevelExperience;
     private int nextLevelExperience;
 
+    public int CurrentLevel
+    {
+        get { return currentLevel; }
+    }
+
     [Header("Interface")]
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI experienceText;
