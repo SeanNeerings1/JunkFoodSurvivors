@@ -12,8 +12,9 @@ public class PlayerShoot : MonoBehaviour
     public AudioSource shootSound;
 
     private float _nextFireTime = 0f;
-    private PlayerMovement _keyboardScript;
-    private PlayerMovementArduino _arduinoScript;
+    //is private so its accesable in other scripts an protected always it childs
+    protected PlayerMovement _keyboardScript;
+    protected PlayerMovementArduino _arduinoScript;
 
     void Start()
     {
