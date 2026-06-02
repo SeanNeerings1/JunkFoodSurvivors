@@ -817,7 +817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1340987980830152933, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2036
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1340987980830152933, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2261,7 +2261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelUnlocker
   upgrades:
   - unlockLevel: 2
-    scriptName: PowerUp2
+    scriptName: PowerUp3
   - unlockLevel: 4
     scriptName: PowerUp1
 --- !u!82 &1887830407
