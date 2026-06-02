@@ -10,6 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public Vector2 moveDirection = Vector2.zero;
     [HideInInspector] public Vector2 lastMoveDirection = Vector2.right;
 
+    private SpriteRenderer spriteRenderer;
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     void Update()
     {
         if (Keyboard.current != null)
@@ -35,6 +41,19 @@ public class PlayerMovement : MonoBehaviour
                 lastMoveDirection = moveDirection;
             }
         }
+        FlipSprite();
         transform.Translate(moveDirection * speed * Time.deltaTime);
+    }
+
+    void FlipSprite()
+    {
+        if (moveDirection.x > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (moveDirection.x < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 }
