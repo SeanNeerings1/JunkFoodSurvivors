@@ -44,6 +44,7 @@ public class LevelUnlocker : MonoBehaviour
                     Transform point = oldShoot.firePoint;
                     float speed = oldShoot.bulletSpeed;
                     float rate = oldShoot.fireRate;
+                    AudioSource audioSource = oldShoot.shootSound;
 
                     DestroyImmediate(oldShoot);
 
@@ -56,6 +57,7 @@ public class LevelUnlocker : MonoBehaviour
                         newShoot.firePoint = point;
                         newShoot.bulletSpeed = speed;
                         newShoot.fireRate = rate;
+                        newShoot.shootSound = audioSource;
                     }
 
                     Debug.Log(nextReward.scriptName + " succesvol toegevoegd via LevelUnlocker!");

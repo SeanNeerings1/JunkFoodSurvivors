@@ -8,6 +8,9 @@ public class PlayerShoot : MonoBehaviour
     public float bulletSpeed = 12f;
     public float fireRate = 0.2f;      
 
+    [Header("Audio")]
+    public AudioSource shootSound;
+
     private float _nextFireTime = 0f;
     private PlayerMovement _keyboardScript;
     private PlayerMovementArduino _arduinoScript;
@@ -16,9 +19,16 @@ public class PlayerShoot : MonoBehaviour
     {
         _keyboardScript = GetComponent<PlayerMovement>();
         _arduinoScript = GetComponent<PlayerMovementArduino>();
+        //if you forget to place shootsound
+        if (shootSound == null)
+        {
+            shootSound = GetComponent<AudioSource>();
+        }
     }
+  
 
-    void Update()
+
+void Update()
     {
         if (Time.time >= _nextFireTime)
         {
@@ -30,10 +40,12 @@ public class PlayerShoot : MonoBehaviour
     protected virtual void Shoot()
     {
         if (bulletPrefab == null) return;
-
+        if (shootSound != null)
+        {
+            shootSound.Play();
+        }
         Vector2 finalShootDirection = Vector2.right; 
 
-       
         if (_arduinoScript != null && _arduinoScript.enabled)
         {
             finalShootDirection = _arduinoScript.lastMoveDirection;
