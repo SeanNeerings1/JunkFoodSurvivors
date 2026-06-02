@@ -799,7 +799,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edac00b734c41424cac8b1169b93f172, type: 3}
---- !u!1001 &645454259
+--- !u!1001 &639991874
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -808,12 +808,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1340987980830152933, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.20359999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340987980830152933, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2036
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340987980830152933, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2036
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340987980830152933, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.808878
+      value: -6.26
       objectReference: {fileID: 0}
     - target: {fileID: 1340987980830152933, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.0917397
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 1340987980830152933, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
       propertyPath: m_LocalPosition.z
@@ -850,6 +862,10 @@ PrefabInstance:
     - target: {fileID: 1722134899135540499, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
       propertyPath: m_Name
       value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522160600259335249, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
+      propertyPath: moveSpeed
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2557,4 +2573,4 @@ SceneRoots:
   - {fileID: 728741959}
   - {fileID: 177825860}
   - {fileID: 1557068725}
-  - {fileID: 645454259}
+  - {fileID: 639991874}
