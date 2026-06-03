@@ -1,13 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class PlayerHealthBarTest : MonoBehaviour
 {
     public int MaxHealth = 100;
     public int CurrentHealth;
 
     public HealthBar healthBar;
+
+    private bool _enemyContact = false;
+    private float _damageCooldown = 1.0f; 
+    private float _lastDamageTime;
+
+
     void Start()
     {
         CurrentHealth = MaxHealth;
@@ -16,9 +21,29 @@ public class PlayerHealthBarTest : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (_enemyContact && Time.time >= _lastDamageTime + _damageCooldown)
         {
             TakeDamage(10);
+            _lastDamageTime = Time.time; 
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyPrefab"))
+        {
+            _enemyContact = true; 
+            TakeDamage(10);        
+            _lastDamageTime = Time.time;
+        }
+    }
+
+    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyPrefab"))
+        {
+            _enemyContact = false;
         }
     }
 
