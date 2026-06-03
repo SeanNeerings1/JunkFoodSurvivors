@@ -18,7 +18,7 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnEnemy();
+        
     }
 
    public void SpawnEnemy()
@@ -30,6 +30,7 @@ public class EnemySpawn : MonoBehaviour
         Vector2 spawnPosition = (Vector2)player.position + direction * distance;
 
        GameObject enemy = Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
+        Debug.Log("spawnEnemy has been called");
     }
 
 
