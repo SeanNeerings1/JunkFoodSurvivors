@@ -81,6 +81,17 @@ public class EnemyBehavior : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy is verslagen!");
+        if (gameObject.CompareTag("EnemyPrefab"))
+        {//calling for kill meter to increase the amount
+            if (KillMeter.Instance != null)
+            {
+                KillMeter.Instance.AddKill();
+            }
+            else
+            {
+                Debug.LogWarning("KillMeter is not found!");
+            }
+        }
         Destroy(gameObject);
     }
 }
