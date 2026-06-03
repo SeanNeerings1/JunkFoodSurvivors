@@ -7,11 +7,13 @@ public class BoomKoolLogic : MonoBehaviour
     [Header("Spawn Settings")]
     public GameObject bombPrefab;
     public bool isPrefab = true;
+    public float spawnCooldown = 2.0f;
 
     [Header("explosion settings")]
     public float Radius = 3.0f;
     public int maxDamage = 100;
     public float fuseTime = 5.0f;
+    private float nextSpawnTime = 0f;
 
     [Header("effects")]
     public ParticleSystem explosionEffect;
@@ -20,9 +22,10 @@ public class BoomKoolLogic : MonoBehaviour
 
     void Update()
     {
-        if (isPrefab && Input.GetKeyDown(KeyCode.B))
+        if (isPrefab && Input.GetKeyDown(KeyCode.B)&& Time.time >= nextSpawnTime)
         {
             SpawnBombOnPlayer();
+            nextSpawnTime = Time.time + spawnCooldown;
         }
     }
 
