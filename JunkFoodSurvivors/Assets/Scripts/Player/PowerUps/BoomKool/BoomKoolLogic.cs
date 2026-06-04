@@ -18,6 +18,10 @@ public class BoomKoolLogic : MonoBehaviour
     [Header("effects")]
     public ParticleSystem explosionEffect;
 
+    [Header("Audio Settings")]
+    public AudioClip explosionSound;
+    [Range(0f, 1f)] public float volume = 1.0f;
+
     private bool isExploded = false;
 
     void Update()
@@ -60,6 +64,10 @@ public class BoomKoolLogic : MonoBehaviour
     void Explode()
     {
         isExploded = true;
+        if (explosionSound != null)
+        {
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position, volume);
+        }
 
         if (explosionEffect != null)
         {

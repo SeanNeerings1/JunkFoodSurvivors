@@ -2892,6 +2892,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoomKool
       objectReference: {fileID: 0}
+    - target: {fileID: 1589786410363893157, guid: d210c7cf99de05246875f0045229f5fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136126781434647409, guid: d210c7cf99de05246875f0045229f5fb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12514,10 +12522,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoomKoolLogic
   bombPrefab: {fileID: 1368419209}
   isPrefab: 1
-  Radius: 6
+  spawnCooldown: 2
+  Radius: 15
   maxDamage: 200
   fuseTime: 3
   explosionEffect: {fileID: 833932186}
+  explosionSound: {fileID: 8300000, guid: c99cd8f7b9c354c4681b2e8f15e33bda, type: 3}
+  volume: 1
 --- !u!4 &1374164248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5206346164002011540, guid: edac00b734c41424cac8b1169b93f172, type: 3}
