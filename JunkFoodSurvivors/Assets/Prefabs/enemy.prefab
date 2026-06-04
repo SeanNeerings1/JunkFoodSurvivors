@@ -155,3 +155,6 @@ MonoBehaviour:
   damage: 10
   moveSpeed: 3.5
   stopDistance: 0.5
+  xpPrefab: {fileID: 5136193939193813842, guid: edac00b734c41424cac8b1169b93f172, type: 3}
+  xpDropCount: 3
+  dropSpreadRadius: 0.5

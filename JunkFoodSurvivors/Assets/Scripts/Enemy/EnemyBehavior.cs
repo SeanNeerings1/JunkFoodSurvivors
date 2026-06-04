@@ -10,6 +10,11 @@ public class EnemyBehavior : MonoBehaviour
     [Header("Movement Settings")]
     public float stopDistance = 0.5f;
 
+    [Header("Drop Settings")]
+    public GameObject xpPrefab;
+    public int xpDropCount = 3; 
+    public float dropSpreadRadius = 0.5f;
+
     private Transform playerTransform;
 
     void Start()
@@ -91,7 +96,24 @@ public class EnemyBehavior : MonoBehaviour
             {
                 Debug.LogWarning("KillMeter is not found!");
             }
+            DropXP();
         }
         Destroy(gameObject);
+    }
+    void DropXP()
+    {
+        if (xpPrefab == null)
+        {
+            Debug.LogWarning("Geen xpPrefab toegewezen op " + gameObject.name);
+            return;
+        }
+
+        for (int i = 0; i < xpDropCount; i++)
+        {
+            Vector2 randomOffset = Random.insideUnitCircle * dropSpreadRadius;
+            Vector3 spawnPosition = transform.position + new Vector3(randomOffset.x, randomOffset.y, 0f);
+        //spawns the xp orbs in random positions
+            Instantiate(xpPrefab, spawnPosition, Quaternion.identity);
+        }
     }
 }
