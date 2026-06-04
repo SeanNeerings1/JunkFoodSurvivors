@@ -92,7 +92,7 @@ public class PlayerMovementArduino : MonoBehaviour
                 break;
 
             // --- ACTIONS (button 5 and 6) ---
-            case 'J': // Pin 6 -> Accepted
+            case 'B': // Pin 6 -> Accepted
                 Debug.LogWarning(" [INPUT] Accept-button Pressed (Works mechanical, here comes the menu code and the accept upgrade)");
                 break;
 
