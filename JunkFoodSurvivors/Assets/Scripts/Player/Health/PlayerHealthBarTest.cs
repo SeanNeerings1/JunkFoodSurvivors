@@ -8,6 +8,9 @@ public class PlayerHealthBarTest : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public AudioSource audioSource;
+    public AudioClip damageSound;
+
     private bool raaktVijandAan = false;
     private float damageCooldown = 1.0f;
     private float lastDamageTime;
@@ -53,5 +56,9 @@ public class PlayerHealthBarTest : MonoBehaviour
         if (CurrentHealth < 0) CurrentHealth = 0;
 
         healthBar.SetHealth(CurrentHealth);
+        if (audioSource != null && damageSound != null)
+        {
+            audioSource.PlayOneShot(damageSound);
+        }
     }
 }
