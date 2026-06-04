@@ -20,6 +20,7 @@ public class BoomKoolLogic : MonoBehaviour
 
     private bool isExploded = false;
 
+
     void Update()
     {
         if (isPrefab && Input.GetKeyDown(KeyCode.B)&& Time.time >= nextSpawnTime)
