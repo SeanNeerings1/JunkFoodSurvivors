@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthBarTest : MonoBehaviour
 {
@@ -23,9 +24,12 @@ public class PlayerHealthBarTest : MonoBehaviour
     {
         if (_enemyContact && Time.time >= _lastDamageTime + _damageCooldown)
         {
-            TakeDamage(10);
+            TakeDamage(50);
             _lastDamageTime = Time.time; 
         }
+
+        
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,7 +37,7 @@ public class PlayerHealthBarTest : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyPrefab"))
         {
             _enemyContact = true; 
-            TakeDamage(10);        
+            TakeDamage(50);        
             _lastDamageTime = Time.time;
         }
     }
@@ -52,5 +56,11 @@ public class PlayerHealthBarTest : MonoBehaviour
         CurrentHealth -= damage;
 
         healthBar.SetHealth(CurrentHealth);
+
+        if (CurrentHealth <= 0)
+        {
+            CurrentHealth = 0;
+            SceneManager.LoadScene("DeathScreen");
+        }
     }
 }
