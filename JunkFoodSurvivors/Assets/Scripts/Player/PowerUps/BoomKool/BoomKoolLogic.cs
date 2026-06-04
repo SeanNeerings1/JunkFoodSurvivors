@@ -67,7 +67,15 @@ public class BoomKoolLogic : MonoBehaviour
         isExploded = true;
         if (explosionSound != null)
         {
-            AudioSource.PlayClipAtPoint(explosionSound, transform.position, volume);
+            AudioSource cameraAudio = Camera.main.GetComponent<AudioSource>();
+            if (cameraAudio != null)
+            {
+                cameraAudio.PlayOneShot(explosionSound, volume);
+            }
+            else
+            {
+                AudioSource.PlayClipAtPoint(explosionSound, Camera.main.transform.position, volume);
+            }
         }
 
         if (explosionEffect != null)
