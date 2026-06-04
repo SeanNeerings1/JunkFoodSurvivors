@@ -25,6 +25,6 @@ public class KillMeter : MonoBehaviour
 
     void UpdateUI()
     {
-        killText.text = "Kills: " + killCount;
+        killText.text = ": " + killCount;
     }
 }
