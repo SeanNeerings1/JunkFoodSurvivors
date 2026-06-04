@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthBarTest : MonoBehaviour
 {
@@ -59,6 +60,11 @@ public class PlayerHealthBarTest : MonoBehaviour
         if (audioSource != null && damageSound != null)
         {
             audioSource.PlayOneShot(damageSound);
+        }
+
+        if (CurrentHealth <= 0)
+        {
+            SceneManager.LoadScene("DeathScene");
         }
     }
 }
