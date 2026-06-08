@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections; // Nodig voor de Coroutine
+using System.Collections; 
 
 public class DeathMenu : MonoBehaviour
 {
