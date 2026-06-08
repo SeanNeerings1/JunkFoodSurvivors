@@ -1,11 +1,22 @@
 using UnityEngine;
+using System.Collections;
 
 public class BossSpawner : MonoBehaviour
 {
     [Header("Spawn Settings")]
     public GameObject bossPrefab; 
-    public Transform spawnPoint;   
+    public Transform spawnPoint;
 
+    [Header("UI Settings")]
+    public GameObject bossWarningUI;
+    void Start()
+    {
+      
+        if (bossWarningUI != null)
+        {
+            bossWarningUI.SetActive(false);
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -29,7 +40,14 @@ public class BossSpawner : MonoBehaviour
 
         GameObject spawnedBoss = Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
         Debug.Log("BossSpawner: the boss has spawned");
-
+        if (spawnedBoss.CompareTag("Boss"))
+        {
+            StartCoroutine(ShowBossUIForSeconds(6f));
+        }
+        else
+        {
+            Debug.LogWarning("BossSpawner: Spawned item doesnt have boss tag");
+        }
         if (AudioManager.Instance != null)
         {
             AudioManager.Instance.SwitchToBossMusic();
@@ -37,6 +55,21 @@ public class BossSpawner : MonoBehaviour
         else
         {
             Debug.LogWarning("BossSpawner: AudioManager not found");
+        }
+    }
+    private IEnumerator ShowBossUIForSeconds(float duration)
+    {
+        if (bossWarningUI != null)
+        {
+            bossWarningUI.SetActive(true); 
+
+            yield return new WaitForSeconds(duration); 
+
+            bossWarningUI.SetActive(false); 
+        }
+        else
+        {
+            Debug.LogWarning("BossSpawner: BossUI isnt given");
         }
     }
 }
