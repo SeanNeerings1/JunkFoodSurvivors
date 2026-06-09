@@ -9550,6 +9550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossSpawner
   bossPrefab: {fileID: 973890908185408704, guid: c785fe6d46de22a4e94a0abf5927f29f, type: 3}
   spawnPoint: {fileID: 0}
+  timeToSpawnBoss: 300
   bossWarningUI: {fileID: 1772170733}
 --- !u!4 &1384207733
 Transform:
@@ -13085,7 +13086,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887830396}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5d2e6396d23bce4096da34af11e658a, type: 3}
   m_Name: 

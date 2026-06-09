@@ -6,7 +6,8 @@ public class BossSpawner : MonoBehaviour
     [Header("Spawn Settings")]
     public GameObject bossPrefab; 
     public Transform spawnPoint;
-
+    public float timeToSpawnBoss = 300f;
+    private bool _bossHasSpawned = false;
     [Header("UI Settings")]
     public GameObject bossWarningUI;
     void Start()
@@ -22,6 +23,21 @@ public class BossSpawner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             SpawnTheBoss();
+        }
+        if (!_bossHasSpawned)
+        {
+            CheckAutoSpawn();
+        }
+    }
+    void CheckAutoSpawn()
+    {
+        if (GameTime.Instance != null)
+        {
+            if (Time.timeSinceLevelLoad >= timeToSpawnBoss)
+            {
+                _bossHasSpawned = true;
+                SpawnTheBoss();
+            }
         }
     }
 
