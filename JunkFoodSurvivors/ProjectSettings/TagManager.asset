@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Enemy
   - Boss
+  - TimerText
   layers:
   - Default
   - TransparentFX
