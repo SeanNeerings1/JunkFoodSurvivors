@@ -89,7 +89,7 @@ public class BoomKoolLogic : MonoBehaviour
 
         foreach (Collider2D hit in hitObjects)
         {
-            if (hit.CompareTag("Enemy"))
+            if (hit.CompareTag("Enemy") || hit.CompareTag("Boss"))
             {
                 EnemyBehavior enemy = hit.GetComponent<EnemyBehavior>();
                 if (enemy != null)

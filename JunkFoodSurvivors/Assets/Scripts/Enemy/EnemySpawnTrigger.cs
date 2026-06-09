@@ -1,5 +1,3 @@
-using System;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class EnemySpawnTrigger : MonoBehaviour
@@ -14,12 +12,22 @@ public class EnemySpawnTrigger : MonoBehaviour
 
     private void Update()
     {
+        if (IsBossActive())
+        {
+            return;
+        }
         // Increase both timers every frame
         _spawnTimer += Time.deltaTime;
         _difficultyTimer += Time.deltaTime;
 
         HandleSpawning();
         HandleDifficultyScaling();
+    }
+    private bool IsBossActive()
+    {
+        BossBehavior boss = Object.FindAnyObjectByType<BossBehavior>();
+        //returns true if boss found
+        return boss != null;
     }
 
     private void HandleSpawning()

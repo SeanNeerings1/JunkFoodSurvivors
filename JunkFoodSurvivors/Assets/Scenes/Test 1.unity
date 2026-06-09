@@ -9548,7 +9548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57dd50027b5989d419b32d87ea71ad83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossSpawner
-  bossPrefab: {fileID: 3607593328151324140, guid: 825cfc9f31089f240973f38ea4863d6a, type: 3}
+  bossPrefab: {fileID: 973890908185408704, guid: c785fe6d46de22a4e94a0abf5927f29f, type: 3}
   spawnPoint: {fileID: 0}
   bossWarningUI: {fileID: 1772170733}
 --- !u!4 &1384207733
@@ -9560,7 +9560,7 @@ Transform:
   m_GameObject: {fileID: 1384207731}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 122.5587, y: -212.64525, z: 0}
+  m_LocalPosition: {x: -2, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12976,7 +12976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelUnlocker
   upgrades:
   - unlockLevel: 2
-    scriptName: Powerup2
+    scriptName: PowerUp2
   - unlockLevel: 4
     scriptName: PowerUp1
   - unlockLevel: 6

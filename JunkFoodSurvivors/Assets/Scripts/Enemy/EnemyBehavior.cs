@@ -83,7 +83,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    void Die()
+   protected virtual void Die()
     {
         Debug.Log("Enemy is verslagen!");
         if (gameObject.CompareTag("Enemy"))
