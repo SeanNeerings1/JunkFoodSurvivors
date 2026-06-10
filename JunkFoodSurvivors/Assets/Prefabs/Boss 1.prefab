@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,12 +84,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: f6b942c137a8d294e86c24de684a7c6a, type: 3}
-  m_Color: {r: 1, g: 0.9190328, b: 0.13396227, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bfdad63f401fabe44bad7c4dec2745f7, type: 3}
+  m_Color: {r: 0.97735846, g: 0.97735846, b: 0.97735846, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 6.99, y: 3.57}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4885c9b3bc779394fbfbc53d08cdd566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossShoot
-  bulletPrefab: {fileID: 8576837439301075224, guid: a3e1aa27ba877ee4181a13c15041cd07, type: 3}
+  bulletPrefab: {fileID: 2833588399202413307, guid: d8c579f6e4678e84290684e19544ff50, type: 3}
   firePoint: {fileID: 0}
   bulletSpeed: 10
   fireRate: 2
@@ -131,7 +131,6 @@ MonoBehaviour:
   xpDropCount: 3
   dropSpreadRadius: 0.5
   bossName: The doughminator
-  victoryEffectPrefab: {fileID: 7492032663835536793, guid: 020e1b47e37505440bd66eda3f5f283b, type: 3}
   bossDeathSound: {fileID: 8300000, guid: 6a91908ee78f9d0409de1eda2b39763a, type: 3}
   deathSoundVolume: 1
 --- !u!61 &-476603722784974630
@@ -172,8 +171,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 6.99, y: 3.57}
+    newSize: {x: 6.99, y: 3.57}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
