@@ -7,7 +7,7 @@ public class BoomKoolLogic : MonoBehaviour
     [Header("Spawn Settings")]
     public GameObject bombPrefab;
     public bool isPrefab = true;
-    public float spawnCooldown = 2.0f;
+    public float spawnCooldown = 5.0f;
 
     [Header("explosion settings")]
     public float Radius = 3.0f;
