@@ -794,6 +794,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1954770693825040338, guid: c785fe6d46de22a4e94a0abf5927f29f, type: 3}
+      propertyPath: attackVoiceLines.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954770693825040338, guid: c785fe6d46de22a4e94a0abf5927f29f, type: 3}
+      propertyPath: 'attackVoiceLines.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d8e7a71c587c0bc4c87416ae616a2eb8, type: 3}
+    - target: {fileID: 1954770693825040338, guid: c785fe6d46de22a4e94a0abf5927f29f, type: 3}
+      propertyPath: 'attackVoiceLines.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 64f334185be035748bd9010288ee6d38, type: 3}
+    - target: {fileID: 1954770693825040338, guid: c785fe6d46de22a4e94a0abf5927f29f, type: 3}
+      propertyPath: 'attackVoiceLines.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6cb7c633dfccafa4baa7cba920433452, type: 3}
+    - target: {fileID: 1954770693825040338, guid: c785fe6d46de22a4e94a0abf5927f29f, type: 3}
+      propertyPath: 'attackVoiceLines.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 07f31d66a77bac2458620a074736eb78, type: 3}
+    - target: {fileID: 1954770693825040338, guid: c785fe6d46de22a4e94a0abf5927f29f, type: 3}
+      propertyPath: 'attackVoiceLines.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6cb7c633dfccafa4baa7cba920433452, type: 3}
     - target: {fileID: 3939586550149080097, guid: c785fe6d46de22a4e94a0abf5927f29f, type: 3}
       propertyPath: health
       value: 1000
