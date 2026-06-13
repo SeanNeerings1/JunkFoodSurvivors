@@ -7,12 +7,9 @@ public class BossShoot : MonoBehaviour
     public Transform firePoint;
     public float bulletSpeed = 10f;
     public float fireRate = 0.5f;
-
     [Header("Audio")]
     public AudioSource shootSound;
-
     private float _nextFireTime = 0f;
-
     protected virtual void Start()
     {
         if (shootSound == null)
@@ -20,7 +17,6 @@ public class BossShoot : MonoBehaviour
             shootSound = GetComponent<AudioSource>();
         }
     }
-
     void Update()
     {
         if (Time.time >= _nextFireTime)
@@ -29,7 +25,6 @@ public class BossShoot : MonoBehaviour
             _nextFireTime = Time.time + fireRate;
         }
     }
-
     protected virtual void Shoot()
     {
         if (bulletPrefab == null) return;
@@ -58,7 +53,7 @@ public class BossShoot : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("De kogel prefab mist het 'BossBullet' script!");
+            Debug.LogWarning("the boss bullet doesnt have a script");
         }
     }
 }

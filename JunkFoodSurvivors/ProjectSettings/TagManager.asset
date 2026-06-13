@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Boss
   - TimerText
+  - Wall
   layers:
   - Default
   - TransparentFX
