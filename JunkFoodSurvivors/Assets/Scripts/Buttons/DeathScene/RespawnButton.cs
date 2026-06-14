@@ -25,6 +25,6 @@ public class DeathMenu : MonoBehaviour
         }
 
         // loads new scene
-        SceneManager.LoadScene("Test 1");
+        SceneManager.LoadScene("LoadingScene");
     }
 }
