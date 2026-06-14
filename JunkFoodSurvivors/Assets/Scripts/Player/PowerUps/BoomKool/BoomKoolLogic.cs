@@ -15,6 +15,8 @@ public class BoomKoolLogic : MonoBehaviour
     public float fuseTime = 5.0f;
     private float nextSpawnTime = 0f;
 
+    public AbilityCooldownUI cooldownUI;
+
     [Header("effects")]
     public ParticleSystem explosionEffect;
 
@@ -27,10 +29,19 @@ public class BoomKoolLogic : MonoBehaviour
 
     void Update()
     {
-        if (isPrefab && Input.GetKeyDown(KeyCode.B)&& Time.time >= nextSpawnTime)
+        if (isPrefab && Input.GetKeyDown(KeyCode.B) && Time.time >= nextSpawnTime)
         {
             SpawnBombOnPlayer();
             nextSpawnTime = Time.time + spawnCooldown;
+
+            if (cooldownUI != null)
+            {
+                cooldownUI.StartCooldown(spawnCooldown);
+            }
+            else
+            {
+                Debug.LogError("Cooldown UI is not assigned on BoomKoolLogic!");
+            }
         }
     }
 

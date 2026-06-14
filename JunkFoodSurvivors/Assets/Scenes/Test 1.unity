@@ -8399,8 +8399,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 0
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9521,6 +9521,7 @@ MonoBehaviour:
   Radius: 15
   maxDamage: 200
   fuseTime: 3
+  cooldownUI: {fileID: 2014278443}
   explosionEffect: {fileID: 4645798846323901732}
   explosionSound: {fileID: 8300000, guid: c99cd8f7b9c354c4681b2e8f15e33bda, type: 3}
   volume: 1
@@ -14318,8 +14319,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14457,6 +14458,7 @@ GameObject:
   - component: {fileID: 2014278440}
   - component: {fileID: 2014278442}
   - component: {fileID: 2014278441}
+  - component: {fileID: 2014278443}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -14524,6 +14526,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014278439}
   m_CullTransparentMesh: 1
+--- !u!114 &2014278443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014278439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a426c023019fcb418659b8170a18bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AbilityCooldownUI
+  cooldownText: {fileID: 1984955153}
+  abilityBox: {fileID: 2014278441}
+  cooldownOpacity: 0.45
 --- !u!1001 &2015246706
 PrefabInstance:
   m_ObjectHideFlags: 0
