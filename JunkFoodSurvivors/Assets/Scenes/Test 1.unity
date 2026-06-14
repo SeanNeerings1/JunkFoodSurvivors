@@ -9858,6 +9858,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5206346164002011540, guid: edac00b734c41424cac8b1169b93f172, type: 3}
   m_PrefabInstance: {fileID: 154045634}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1441015552 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4015099981283767725, guid: fff4f23b60045ed429ec26544f5975b0, type: 3}
+  m_PrefabInstance: {fileID: 7716420781197592095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1443292789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14900,6 +14905,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 323915214}
+    - target: {fileID: 397104352837444812, guid: fff4f23b60045ed429ec26544f5975b0, type: 3}
+      propertyPath: playerSprite
+      value: 
+      objectReference: {fileID: 1441015552}
     - target: {fileID: 1236766692256420094, guid: fff4f23b60045ed429ec26544f5975b0, type: 3}
       propertyPath: levelText
       value: 

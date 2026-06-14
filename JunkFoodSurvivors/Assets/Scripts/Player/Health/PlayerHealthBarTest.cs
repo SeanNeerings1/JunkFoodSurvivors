@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,10 @@ public class PlayerHealthBarTest : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip damageSound;
+
+    [Header("Flashing Settings")]
+    public SpriteRenderer playerSprite; //player sprite here
+    public float flashDuration = 0.15f;
 
     private bool raaktVijandAan = false;
     private float damageCooldown = 1.0f;
@@ -61,10 +66,20 @@ public class PlayerHealthBarTest : MonoBehaviour
         {
             audioSource.PlayOneShot(damageSound);
         }
+        if (playerSprite != null && CurrentHealth > 0)
+        {
+            StartCoroutine(FlashRed());
+        }
 
         if (CurrentHealth <= 0)
         {
             SceneManager.LoadScene("DeathScene");
         }
+    }
+    private IEnumerator FlashRed()
+    {
+        playerSprite.color = Color.red; //Changes player to red
+        yield return new WaitForSeconds(flashDuration); // time for flash
+        playerSprite.color = Color.white; // changes color back
     }
 }
