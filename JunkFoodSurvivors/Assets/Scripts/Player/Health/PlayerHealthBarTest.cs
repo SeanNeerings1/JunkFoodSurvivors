@@ -76,6 +76,23 @@ public class PlayerHealthBarTest : MonoBehaviour
             SceneManager.LoadScene("DeathScene");
         }
     }
+    public void Heal(int amount)
+    {
+        CurrentHealth += amount;
+
+        // makes sure it doesnt go higher
+        if (CurrentHealth > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
+
+        // updates visual healthbar
+        if (healthBar != null)
+        {
+            healthBar.SetHealth(CurrentHealth);
+        }
+
+    }
     private IEnumerator FlashRed()
     {
         playerSprite.color = Color.red; //Changes player to red
