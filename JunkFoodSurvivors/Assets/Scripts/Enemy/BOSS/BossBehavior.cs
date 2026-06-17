@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossBehavior : EnemyBehavior
 {
@@ -23,6 +24,7 @@ public class BossBehavior : EnemyBehavior
         {
             Debug.LogWarning("KillMeter is not found!");
         }
+        SceneManager.LoadScene("WinScene");
         Destroy(gameObject);
     }
 }
