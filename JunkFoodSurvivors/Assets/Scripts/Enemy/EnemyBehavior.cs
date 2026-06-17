@@ -15,7 +15,7 @@ public class EnemyBehavior : MonoBehaviour
     public int xpDropCount = 3; 
     public float dropSpreadRadius = 0.5f;
 
-    private Transform playerTransform;
+    protected Transform playerTransform;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    void MoveTowardsPlayer()
+    protected virtual void MoveTowardsPlayer()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
@@ -50,7 +50,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    void FlipSprite()
+    protected void FlipSprite()
     {
         if (playerTransform.position.x > transform.position.x)
         {
@@ -100,7 +100,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    void DropXP()
+    protected virtual void DropXP()
     {
         if (xpPrefab == null)
         {
