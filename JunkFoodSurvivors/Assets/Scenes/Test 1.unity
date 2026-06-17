@@ -14722,6 +14722,14 @@ PrefabInstance:
       propertyPath: EnemyPrefab
       value: 
       objectReference: {fileID: 1722134899135540499, guid: 38810ac654172c54d94c3b8548a67231, type: 3}
+    - target: {fileID: 3594580478198213035, guid: fff4f23b60045ed429ec26544f5975b0, type: 3}
+      propertyPath: EnemyPrefab2
+      value: 
+      objectReference: {fileID: 2701110962332278174, guid: bc6f55e0c0a46dc479085b611fcc6c89, type: 3}
+    - target: {fileID: 3594580478198213035, guid: fff4f23b60045ed429ec26544f5975b0, type: 3}
+      propertyPath: _enemy2SpawnRate
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6347515327821034879, guid: fff4f23b60045ed429ec26544f5975b0, type: 3}
       propertyPath: m_Enabled
       value: 1
