@@ -3,34 +3,48 @@ using UnityEngine.UIElements;
 
 public class EnemySpawn : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+   
 
+    [SerializeField] private int _enemy2SpawnRate; //Every how many Enemies spawn, that it instead spawns an enemy 2
     public GameObject EnemyPrefab;
+    public GameObject EnemyPrefab2;
     public Transform player;
     public float minRadius = 3f;
     public float maxRadius = 6f;
+    private int _enemiesSpawned = 0;
+
     void Start()
     {
         
     }
-
- 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-   public void SpawnEnemy()
+    public void SpawnEnemy()
     {
         Vector2 direction = Random.insideUnitCircle.normalized;
         float distance = Random.Range(minRadius, maxRadius);
-        
 
         Vector2 spawnPosition = (Vector2)player.position + direction * distance;
 
-       GameObject enemy = Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
-        Debug.Log("spawnEnemy has been called");
+        _enemiesSpawned++;
+
+        GameObject prefabToSpawn;
+
+        if (_enemiesSpawned % _enemy2SpawnRate == 0)
+        {
+            prefabToSpawn = EnemyPrefab2;
+        }
+        else
+        {
+            prefabToSpawn = EnemyPrefab;
+        }
+
+        Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+
+        Debug.Log("SpawnEnemy has been called");
     }
 
 
