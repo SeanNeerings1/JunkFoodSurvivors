@@ -20,10 +20,6 @@ public class BossSpawner : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SpawnTheBoss();
-        }
         if (!_bossHasSpawned)
         {
             CheckAutoSpawn();
