@@ -13,11 +13,13 @@ public class PlayerShoot : MonoBehaviour
 
     private float _nextFireTime = 0f;
     //is private so its accesable in other scripts an protected always it childs
+    protected PhoneMovement _phoneScript;
     protected PlayerMovement _keyboardScript;
     protected PlayerMovementArduino _arduinoScript;
 
     void Start()
     {
+        _phoneScript = GetComponent<PhoneMovement>();
         _keyboardScript = GetComponent<PlayerMovement>();
         _arduinoScript = GetComponent<PlayerMovementArduino>();
         //if you forget to place shootsound
@@ -54,6 +56,10 @@ void Update()
         else if (_keyboardScript != null && _keyboardScript.enabled)
         {
             finalShootDirection = _keyboardScript.lastMoveDirection;
+        }
+        else if (_phoneScript != null && _phoneScript.enabled)
+        {
+            finalShootDirection = _phoneScript.lastMoveDirection;
         }
         SpawnSingleBullet(finalShootDirection.normalized);
     }

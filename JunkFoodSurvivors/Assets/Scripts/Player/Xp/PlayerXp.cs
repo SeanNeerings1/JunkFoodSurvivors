@@ -28,12 +28,7 @@ public class PlayerXp : MonoBehaviour
 
     private void Update()
     {
-        // TESTING: Gain 5 XP when left-clicking
-        if (Mouse.current != null &&
-            Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            AddExperience(5);
-        }
+      
     }
 
     public void AddExperience(int amount)
