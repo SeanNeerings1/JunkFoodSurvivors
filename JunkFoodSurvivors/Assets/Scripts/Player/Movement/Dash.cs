@@ -5,6 +5,8 @@ public class Dashing : MonoBehaviour
 {
     private Rigidbody2D _rb;
 
+    [SerializeField] private AbilityCooldownUI _cooldownUI;
+
     [Header("Dash settings")]
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private float _dashingPower = 24f;
@@ -77,7 +79,7 @@ public class Dashing : MonoBehaviour
         _rb.gravityScale = originalGravity;
         isDashing = false;
 
-       
+        _cooldownUI.StartCooldown(2);
         yield return new WaitForSeconds(_dashingCooldown);
         _canDash = true;
     }
